@@ -1,0 +1,240 @@
+$(function(){
+	// действия при прокрутки колесом
+		var scale = 0;
+		var opacity = 1;
+		var progress = $('progress');
+		var firstPage = $('#firstPage');
+		var secondPage = $('.secondPage');
+		var digit = $('#digit');
+		var wrapper = $('.wrapper');
+		var mainText = $('.main-text');
+	$('body').on('mousewheel', function(event) {
+		var size = 0;
+		var delta = event.deltaY || event.deltaX;
+		// console.log (size);
+		if (delta < 0 ) {
+			size += 1;
+		    scale -= 1;
+		    opacity -= 0.1;
+		} else {
+			size -= 1;
+		    opacity += 0.1;
+		    scale += 1;
+		}
+		// console.log(firstPage);
+		function changeOpacity (opacity) {
+			// console.log(opacity);
+			
+			if (opacity <= 0.1) {
+				firstPage.css('display', 'none');
+				secondPage.css('display', 'block');
+				// digit.style.display = 'none';
+				// wrapper[0].style.background = 'red';
+			}
+			return opacity += 1;
+		}
+		      mainText.css('opacity',opacity) ;
+		      // digit.innerHTML = scale;
+		function progressBarMove (size) {
+			progress.val(function(index, c){ 
+				if ( c < 244) {
+					return c = 244 ;
+				} else {
+					return (c+size);
+					
+				}
+			});
+			console.log(progress.val());
+		}
+	    // console.log(event.deltaX, event.deltaY, event.deltaFactor);
+	    changeOpacity(opacity);
+	    progressBarMove(size);
+	    event.preventDefault();
+	});
+	
+  /////действия при прокрутки колесом//////
+
+  	////плавная прокрутка страницы
+	var $page = $('html, body');
+	$('a[href*="#"]').click(function() { //при нажатии на ссылку с #
+	    $page.animate({
+	        scrollTop: $($.attr(this, 'href')).offset().top // идёт плавная прокрутка
+	    }, 400);
+	    return false;
+	});
+	////scrollup
+	$('#scrollup i').mouseover( function(){ // при наведении курсора на иконку
+		$( this ).animate({opacity: 0.65},100); //меняется прозрачность
+	}).mouseout( function(){
+		$( this ).animate({opacity: 1},100);
+	}).click( function(){ // при нажатии на иконку страницу плавно подымается вверх
+		$page.animate({scrollTop: $($page).offset().top}, 400);
+		// window.scroll(0 ,0); 
+		return false;
+	});
+
+	$(window).scroll(function(){
+		if ( $(document).scrollTop() > 0 ) {
+			$('#scrollup').fadeIn('fast'); // если страница не вверху-показываем стрелку
+		} else {
+			$('#scrollup').fadeOut('fast');
+		}
+	});
+	// плавная прокрутка страницы // 
+
+	// преключение табов
+	$( "#projectsImg1" ).show ();
+  	$( "#projectsImg2" ).hide ();
+  	$( "#projectsImg3" ).hide ();
+  	$( "#projectsImg4" ).hide ();
+  	$( "#projectsImg5" ).hide ();
+  	$( "#projectsImg6" ).hide ();
+  	$( "#projectsImg7" ).hide ();
+  	$( "#projectsImg8" ).hide ();
+  	$( "#projectsImg9" ).hide ();
+  	$( "#projectsImg10" ).hide ();
+  	$( "#image1" ).click(function(){
+  		$( "#projectsImg1" ).show ();
+  		$("#projectTitle-1").text('lorem ipsum');
+	  	$( "#projectsImg2" ).hide ();
+	  	$( "#projectsImg3" ).hide ();
+	  	$( "#projectsImg4" ).hide ();
+	  	$( "#projectsImg5" ).hide ();
+	  	$( "#projectsImg6" ).hide ();
+	  	$( "#projectsImg7" ).hide ();
+	  	$( "#projectsImg8" ).hide ();
+	  	$( "#projectsImg9" ).hide ();
+	  	$( "#projectsImg10" ).hide ();
+   	});
+   	$( "#image2" ).click(function(){
+  		$( "#projectsImg1" ).hide ();
+	  	$( "#projectsImg2" ).show ();
+	  	$("#projectTitle-1").text('lorem ipsum2');
+	  	$( "#projectsImg3" ).hide ();
+	  	$( "#projectsImg4" ).hide ();
+	  	$( "#projectsImg5" ).hide ();
+	  	$( "#projectsImg6" ).hide ();
+	  	$( "#projectsImg7" ).hide ();
+	  	$( "#projectsImg8" ).hide ();
+	  	$( "#projectsImg9" ).hide ();
+	  	$( "#projectsImg10" ).hide ();
+   	});
+   	$( "#image3" ).click(function(){
+  		$( "#projectsImg1" ).hide ();
+	  	$( "#projectsImg2" ).hide ();
+	  	$( "#projectsImg3" ).show ();
+	  	$( "#projectsImg4" ).hide ();
+	  	$( "#projectsImg5" ).hide ();
+	  	$( "#projectsImg6" ).hide ();
+	  	$( "#projectsImg7" ).hide ();
+	  	$( "#projectsImg8" ).hide ();
+	  	$( "#projectsImg9" ).hide ();
+	  	$( "#projectsImg10" ).hide ();
+   	});
+   	 	$( "#image4" ).click(function(){
+  		$( "#projectsImg1" ).hide ();
+	  	$( "#projectsImg2" ).hide ();
+	  	$( "#projectsImg3" ).hide ();
+	  	$( "#projectsImg4" ).show ();
+	  	$( "#projectsImg5" ).hide ();
+	  	$( "#projectsImg6" ).hide ();
+	  	$( "#projectsImg7" ).hide ();
+	  	$( "#projectsImg8" ).hide ();
+	  	$( "#projectsImg9" ).hide ();
+	  	$( "#projectsImg10" ).hide ();
+   	});
+   	 	$( "#image5" ).click(function(){
+  		$( "#projectsImg1" ).hide ();
+	  	$( "#projectsImg2" ).hide ();
+	  	$( "#projectsImg3" ).hide ();
+	  	$( "#projectsImg4" ).hide ();
+	  	$( "#projectsImg5" ).show ();
+	  	$( "#projectsImg6" ).hide ();
+	  	$( "#projectsImg7" ).hide ();
+	  	$( "#projectsImg8" ).hide ();
+	  	$( "#projectsImg9" ).hide ();
+	  	$( "#projectsImg10" ).hide ();
+   	});
+   	 	$( "#image6" ).click(function(){
+  		$( "#projectsImg1" ).hide ();
+	  	$( "#projectsImg2" ).hide ();
+	  	$( "#projectsImg3" ).hide ();
+	  	$( "#projectsImg4" ).hide ();
+	  	$( "#projectsImg5" ).hide ();
+	  	$( "#projectsImg6" ).show ();
+	  	$( "#projectsImg7" ).hide ();
+	  	$( "#projectsImg8" ).hide ();
+	  	$( "#projectsImg9" ).hide ();
+	  	$( "#projectsImg10" ).hide ();
+   	});
+   	 	$( "#image7" ).click(function(){
+  		$( "#projectsImg1" ).hide ();
+	  	$( "#projectsImg2" ).hide ();
+	  	$( "#projectsImg3" ).hide ();
+	  	$( "#projectsImg4" ).hide ();
+	  	$( "#projectsImg5" ).hide ();
+	  	$( "#projectsImg6" ).hide ();
+	  	$( "#projectsImg7" ).show ();
+	  	$( "#projectsImg8" ).hide ();
+	  	$( "#projectsImg9" ).hide ();
+	  	$( "#projectsImg10" ).hide ();
+   	});
+   	 	$( "#image8" ).click(function(){
+  		$( "#projectsImg1" ).hide ();
+	  	$( "#projectsImg2" ).hide ();
+	  	$( "#projectsImg3" ).hide ();
+	  	$( "#projectsImg4" ).hide ();
+	  	$( "#projectsImg5" ).hide ();
+	  	$( "#projectsImg6" ).hide ();
+	  	$( "#projectsImg7" ).hide ();
+	  	$( "#projectsImg8" ).show ();
+	  	$( "#projectsImg9" ).hide ();
+	  	$( "#projectsImg10" ).hide ();
+   	});
+   	$( "#image9" ).click(function(){
+  		$( "#projectsImg1" ).hide ();
+	  	$( "#projectsImg2" ).hide ();
+	  	$( "#projectsImg3" ).hide ();
+	  	$( "#projectsImg4" ).hide ();
+	  	$( "#projectsImg5" ).hide ();
+	  	$( "#projectsImg6" ).hide ();
+	  	$( "#projectsImg7" ).hide ();
+	  	$( "#projectsImg8" ).hide ();
+	  	$( "#projectsImg9" ).show ();
+	  	$( "#projectsImg10" ).hide ();
+	  	});
+	$( "#image10" ).click(function(){
+  		$( "#projectsImg1" ).hide ();
+	  	$( "#projectsImg2" ).hide ();
+	  	$( "#projectsImg3" ).hide ();
+	  	$( "#projectsImg4" ).hide ();
+	  	$( "#projectsImg5" ).hide ();
+	  	$( "#projectsImg6" ).hide ();
+	  	$( "#projectsImg7" ).hide ();
+	  	$( "#projectsImg8" ).hide ();
+	  	$( "#projectsImg9" ).hide ();
+	  	$( "#projectsImg10" ).show ();
+   	});
+
+});
+
+
+
+
+/////карусель
+  // $(".owl-carousel").owlCarousel({
+  // 	loop:true,
+  //   margin:10,
+  //   nav:true,
+  //   responsive:{
+  //       0:{
+  //           items:1
+  //       },
+  //       600:{
+  //           items:3
+  //       },
+  //       1000:{
+  //           items:3
+  //       }
+  //   }
+  // });
