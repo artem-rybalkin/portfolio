@@ -5,7 +5,7 @@ $(function(){
 		var progress = $('progress');
 		var firstPage = $('#firstPage');
 		var secondPage = $('.secondPage');
-		var digit = $('#digit');
+		var digit = $('#count');
 		var wrapper = $('.wrapper');
 		var mainText = $('.main-text');
 	$('body').on('mousewheel', function(event) {
@@ -14,27 +14,30 @@ $(function(){
 		// console.log (size);
 		if (delta < 0 ) {
 			size += 1;
-		    scale -= 1;
+		    scale += 10;
 		    opacity -= 0.1;
 		} else {
 			size -= 1;
 		    opacity += 0.1;
-		    scale += 1;
+		    scale -= 10;
 		}
-		// console.log(firstPage);
+		if (scale<=0) { /* если крутить в обратную сторону, меньше нуля не считать*/
+			scale = 0;
+		}
+		if (opacity >=1) {
+			opacity = 1;
+		}
+
+		console.log(scale);
 		function changeOpacity (opacity) {
-			// console.log(opacity);
-			
 			if (opacity <= 0.1) {
 				firstPage.css('display', 'none');
 				secondPage.css('display', 'block');
-				// digit.style.display = 'none';
-				// wrapper[0].style.background = 'red';
 			}
 			return opacity += 1;
 		}
 		      mainText.css('opacity',opacity) ;
-		      // digit.innerHTML = scale;
+		      digit.text('Loading:' + scale + '%') ;
 		function progressBarMove (size) {
 			progress.val(function(index, c){ 
 				if ( c < 244) {
