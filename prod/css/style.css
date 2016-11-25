@@ -63,7 +63,8 @@ li {
   list-style: none; }
 
 body {
-  font-size: 14px; }
+  font-size: 14px;
+  background: #2b2827; }
 
 .wrapper {
   top: 0;
@@ -82,8 +83,20 @@ body {
   position: absolute;
   text-align: center; }
 
+.logotip {
+  font-size: 20px;
+  position: absolute;
+  z-index: 10;
+  top: 20%;
+  left: 50%; }
+
 #count {
-  position: absolute; }
+  font-size: 20px; }
+
+.countBlock {
+  position: absolute;
+  top: 60%;
+  width: 100%; }
 
 .main-text {
   position: absolute;
@@ -93,13 +106,6 @@ body {
 .secondPage {
   display: none;
   height: 100%; }
-
-.logotip {
-  font-size: 20px;
-  position: absolute;
-  z-index: 10;
-  top: 20%;
-  left: 50%; }
 
 .leftSide {
   background: #2b2827;

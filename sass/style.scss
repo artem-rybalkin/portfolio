@@ -20,6 +20,7 @@ li {
 }
 body {
 	font-size: 14px;
+	background: #2b2827;
 }
 .wrapper {
 	// position: absolute;
@@ -41,10 +42,23 @@ body {
     text-align: center;
    
 }
-#count {
+.logotip {
+	font-size: 20px;
 	position: absolute;
+	z-index: 10;
+	top: 20%;
+	left: 50%;
+
+}
+#count {
+	font-size: 20px;
 	// color: white;
 	
+}
+.countBlock {
+	position: absolute;
+	top: 60%;
+	width: 100%;
 }
 .main-text {
 	position: absolute;
@@ -59,14 +73,6 @@ body {
 	height: 100%;
 }
 
-.logotip {
-	font-size: 20px;
-	position: absolute;
-	z-index: 10;
-	top: 20%;
-	left: 50%;
-
-}
 .leftSide {
 	background: #2b2827;
 	float: left;
@@ -133,6 +139,7 @@ body {
 }
 
 .rightSide {
+
 	overflow: hidden;
 	float: right;
 	// right: 100%;

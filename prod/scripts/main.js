@@ -1,59 +1,69 @@
 $(function(){
 	// действия при прокрутки колесом
-		var scale = 0;
-		var opacity = 1;
-		var progress = $('progress');
-		var firstPage = $('#firstPage');
-		var secondPage = $('.secondPage');
-		var digit = $('#count');
-		var wrapper = $('.wrapper');
-		var mainText = $('.main-text');
-	$('body').on('mousewheel', function(event) {
-		var size = 0;
-		var delta = event.deltaY || event.deltaX;
+	// var progress = $('progress');
+	// var mainText = $('.main-text');
+		// var size = 0;
 		// console.log (size);
-		if (delta < 0 ) {
-			size += 1;
+	var scale = 0; /*счётчик*/
+	var opacity = 1; /*прозрачность*/
+	var firstPage = $('#firstPage');
+	var secondPage = $('.secondPage');
+	var digit = $('#count'); /*значение, кторок вставляется в %*/
+	var wrapper = $('.wrapper');
+	$('body').on('mousewheel', function(event) {
+		var delta = event.deltaY || event.deltaX; /*повороты колеса*/
+		if (delta < 0 ) { /*если крутим колесо вниз*/
+			// size += 1;
 		    scale += 10;
 		    opacity -= 0.1;
-		} else {
-			size -= 1;
+		} else { /*если крутим колесо вверх*/
+			// size -= 1;
 		    opacity += 0.1;
 		    scale -= 10;
 		}
 		if (scale<=0) { /* если крутить в обратную сторону, меньше нуля не считать*/
 			scale = 0;
 		}
-		if (opacity >=1) {
+		if (scale >= 100) {
+			scale = 100;
+		}
+		if (opacity >=1) { /*не увеличиваем прозразночть, что бы страничкасменилась за 10 щелчков*/
 			opacity = 1;
 		}
 
 		console.log(scale);
+		function hideFirstPage () {
+
+			firstPage.css('display', 'none').animate({},2000);
+			secondPage.css('display', 'block').animate({},2000);
+		}
 		function changeOpacity (opacity) {
 			if (opacity <= 0.1) {
-				firstPage.css('display', 'none');
-				secondPage.css('display', 'block');
+				// setTimeout( hideFirstPage, 500) ;
+				// firstPage.css('display', 'none').animate({},5500);
+				 firstPage.fadeOut(3000);
+				 secondPage.fadeIn(3000);
+			// secondPage.css('display', 'block').animate({},5500);
 			}
 			return opacity += 1;
 		}
-		      mainText.css('opacity',opacity) ;
-		      digit.text('Loading:' + scale + '%') ;
-		function progressBarMove (size) {
-			progress.val(function(index, c){ 
-				if ( c < 244) {
-					return c = 244 ;
-				} else {
-					return (c+size);
-					
-				}
-			});
-			console.log(progress.val());
-		}
-	    // console.log(event.deltaX, event.deltaY, event.deltaFactor);
+		digit.text('Loading:' + scale + '%') ;
 	    changeOpacity(opacity);
-	    progressBarMove(size);
-	    event.preventDefault();
+	    event.preventDefault(); /*отменяем прокрутку страницы вниз*/
 	});
+		// function progressBarMove (size) {
+		// 	progress.val(function(index, c){ 
+		// 		if ( c < 244) {
+		// 			return c = 244 ;
+		// 		} else {
+		// 			return (c+size);
+					
+		// 		}
+		// 	});
+		// 	console.log(progress.val());
+		// }
+	    // console.log(event.deltaX, event.deltaY, event.deltaFactor);
+	    // progressBarMove(size);
 	
   /////действия при прокрутки колесом//////
 
@@ -97,7 +107,7 @@ $(function(){
   	$( "#projectsImg9" ).hide ();
   	$( "#projectsImg10" ).hide ();
   	$( "#image1" ).click(function(){
-  		$( "#projectsImg1" ).show ();
+  		$( "#projectsImg1" ).show (500);
   		$("#projectTitle-1").text('lorem ipsum');
 	  	$( "#projectsImg2" ).hide ();
 	  	$( "#projectsImg3" ).hide ();
@@ -111,7 +121,7 @@ $(function(){
    	});
    	$( "#image2" ).click(function(){
   		$( "#projectsImg1" ).hide ();
-	  	$( "#projectsImg2" ).show ();
+	  	$( "#projectsImg2" ).show (500);
 	  	$("#projectTitle-1").text('lorem ipsum2');
 	  	$( "#projectsImg3" ).hide ();
 	  	$( "#projectsImg4" ).hide ();
