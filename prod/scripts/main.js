@@ -106,11 +106,14 @@ $(function(){
 		});
 		event.preventDefault();
 	});
-	$('.closeButton').click(function(){
+	
+	/*открытие страницы обо мне*/
+	/*закрытие обомне*/
+	$('.projectInfo').click(function(){
 		$('.projects').css('display', 'block');
 		$('.cv').css('display','none');
 	});
-	/*открытие страницы обо мне*/
+	/*закрытие обомне*/
 	// преключение табов
 	$( "#projectsImg1" ).show ();
   	$( "#projectsImg2" ).hide ();
@@ -244,7 +247,10 @@ $(function(){
 	  	$( "#projectsImg9" ).hide ();
 	  	$( "#projectsImg10" ).show ();
    	});
-
+   	if (jQuery.browser.mobile == true) {
+   		$('.closeButton').css('display','block');
+   	}
+	console.log(jQuery.browser.mobile);
 });
 
 

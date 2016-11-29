@@ -83,6 +83,7 @@ body {
 	// border: 1px solid black;
 }
 .cv {
+	text-align: center;
 	display: none;
 	height: 90%;
 	width: 90%;
@@ -95,10 +96,22 @@ body {
 		// height: 30%;
 		// border: 1px solid grey;
 	}
+	.cv-name {
+		margin-top: 10px;
+    	padding-top: 10px;
+    	float: right;
+	}
+	.softskils {
+		width: 66%;
+	    float: right;
+	    padding-left: 20px;
+	    padding-top: 20px;
+	}
 	.cv-about_me {
 		height: 200px;
 	}
 	.foto {
+		margin-top: 10px;
 		float: right;
 		width: 180px;
 	    height: 180px;
@@ -112,6 +125,10 @@ body {
 	}
 	.cv-education {
 		clear: both;
+		padding-top: 20px;
+	}
+	.cv-skills {
+		padding-top:20px;
 	}
 	.card {
 		float: left;
@@ -119,7 +136,7 @@ body {
 		width: 175px;
 		height: 85px;
 		background: #607D8B;
-		border-radius: 2px;
+		border-radius: 8px;
 		.year {
 			margin:3px;
 			text-align: center;
@@ -219,6 +236,7 @@ body {
 /*тех скилы анимация*/
 /*кнопка закрыть*/
 .closeButton {
+	display: none;
 	width: 25px;
 	height: 25px;
 	line-height: 22px;
@@ -242,9 +260,32 @@ body {
 	top: 30%;
 	position: relative;
 }
+.projectTitle:after,
+.projectTitle:before,
+.projectDiscription:after,
+.projectDiscription:before {
+    position: absolute;
+    content: '';
+}
+
+.projectTitle:after,
+.projectDiscription:after{
+   
+    width:45px;
+    border-top: 2px solid red;
+    right: 0px;
+}
+.projectTitle:after {
+	 top: 25px;
+}
+.projectDiscription:after {
+	 top: 125px;
+}
+
 .projectTitle {
 	text-align: right;
 	padding-bottom: 20px;
+	// border-bottom: 
 }
 .projectDiscription {
 	float: right;
@@ -331,7 +372,7 @@ body {
 		float: right;
 		height:10%;
 		width: 10%;
-		border-top: 1px solid red;
+		border-top: 2px solid red;
 	}
 	a {
 		float: right;
