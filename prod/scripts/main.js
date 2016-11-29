@@ -252,8 +252,8 @@ $(function(){
    	}
 	console.log(jQuery.browser.mobile);
 	$('.closeButton').on("tap", function(){
-		firstPage.css('display', 'none').animate({},2000);
-		secondPage.css('display', 'block').animate({},2000);
+		firstPage.css('display', 'none');
+		secondPage.css('display', 'block');
 		
 	});
 });
