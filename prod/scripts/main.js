@@ -251,7 +251,7 @@ $(function(){
    		$('.closeButton').css('display','block');
    	}
 	console.log(jQuery.browser.mobile);
-	$('.closeButton').on("tap", function(){
+	$('body').on("tap", function(){
 		firstPage.css('display', 'none');
 		secondPage.css('display', 'block');
 		
