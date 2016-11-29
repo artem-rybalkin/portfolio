@@ -94,7 +94,23 @@ $(function(){
 		}
 	});
 	// плавная прокрутка страницы // 
-
+	/* открытие страницы обо мне*/
+	$('.aboutMe').click(function(){
+		$('.projects').css('display', 'none');
+		$('.cv').css('display','block');
+		// $('.skillbar').each($(this).css('width',0));
+		$('.skillbar').each(function(){
+			$(this).find('.skillbar-bar').animate({
+				width:$(this).attr('data-percent')
+			},3000);
+		});
+		event.preventDefault();
+	});
+	$('.closeButton').click(function(){
+		$('.projects').css('display', 'block');
+		$('.cv').css('display','none');
+	});
+	/*открытие страницы обо мне*/
 	// преключение табов
 	$( "#projectsImg1" ).show ();
   	$( "#projectsImg2" ).hide ();
