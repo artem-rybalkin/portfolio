@@ -251,7 +251,7 @@ $(function(){
    		$('.closeButton').css('display','block');
    	}
 	console.log(jQuery.browser.mobile);
-	$('.closeButton').click( function(){
+	$('.closeButton').on("tap", function(){
 		firstPage.css('display', 'none').animate({},2000);
 		secondPage.css('display', 'block').animate({},2000);
 		
