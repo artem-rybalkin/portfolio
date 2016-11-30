@@ -249,16 +249,14 @@ $(function(){
    	});
    	if (jQuery.browser.mobile == true) {
    		$('.closeButton').css('display','block');
+		$('#firstPage').css('display','none');
+		$('.secondPage').css('display','block');
    	}
-	console.log(jQuery.browser.mobile);
-	$('body').on("tap", function(){
-		firstPage.css('display', 'none');
-		secondPage.css('display', 'block');
+	// console.log(jQuery.browser.mobile);
+	// $('body').on("click", function(){
 		
-	});
+	// });
 });
-
-
 
 
 /////карусель
