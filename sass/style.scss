@@ -32,6 +32,7 @@ body {
     height: 100%;
     overflow: hidden;
 }
+/*первая страница*/
 #firstPage {
 	opacity: 1;
 	background: #008B8B;
@@ -70,6 +71,9 @@ body {
 	top: 40%;
  	// left: 35%;
 }
+/*первая страница*/
+
+/*вторая страница*/
 .secondPage {
 	display: none;
 	height: 100%;
@@ -99,11 +103,11 @@ body {
 	.cv-name {
 		margin-top: 10px;
     	padding-top: 10px;
-    	float: right;
+    	// float: right;
 	}
 	.softskils {
 		width: 66%;
-	    float: right;
+	    // float: right;
 	    padding-left: 20px;
 	    padding-top: 20px;
 	}
@@ -130,10 +134,15 @@ body {
 	.cv-skills {
 		padding-top:20px;
 	}
+	.card-first {
+		margin-left: 30px;
+	}
 	.card {
+		font-size: 10px;
 		float: left;
-		margin: 10px;
-		width: 175px;
+		margin-right: 10px;
+		margin-top: 10px;
+		width: 28%;
 		height: 85px;
 		background: #607D8B;
 		border-radius: 8px;
@@ -149,9 +158,8 @@ body {
 		.company_course-name,
 		.course-name {
 			text-align: center;
-			padding-bottom: 5px;
+			padding: 5px;
 		}
-	
 	}
 	
 }
@@ -234,24 +242,38 @@ body {
 }
 
 /*тех скилы анимация*/
-/*кнопка закрыть*/
-.closeButton {
-	display: none;
-	width: 25px;
-	height: 25px;
-	line-height: 22px;
-	background: #F44336;
-	border: 1px solid #616161;
-	border-radius: 12px;
-	// position: absolute;
-	float: right;
-	text-align: center;
-}
-.closeButton:hover {
-	cursor: pointer;
-	background: #D32F2F;
 
+/*skype mail location*/
+.contact {
+	clear: both;
+	padding-top: 20px;
+	div {
+		width:32%;
+		text-align: center;
+		float: left;
+		// padding-left: 20px;
+	}
 }
+/*skype mail location*/
+
+/*кнопка закрыть*/
+// .closeButton {
+// 	display: none;
+// 	width: 25px;
+// 	height: 25px;
+// 	line-height: 22px;
+// 	background: #F44336;
+// 	border: 1px solid #616161;
+// 	border-radius: 12px;
+// 	// position: absolute;
+// 	float: right;
+// 	text-align: center;
+// }
+// .closeButton:hover {
+// 	cursor: pointer;
+// 	background: #D32F2F;
+
+// }
 /*кнопка закрыть*/
 .projects {
 	float: left;
@@ -263,13 +285,19 @@ body {
 .projectTitle:after,
 .projectTitle:before,
 .projectDiscription:after,
-.projectDiscription:before {
+.projectDiscription:before,
+#lingGitHub:after,
+#linkGHP:after,
+#lingGitHub:before,
+#linkGHP:before {
     position: absolute;
     content: '';
 }
 
 .projectTitle:after,
-.projectDiscription:after{
+.projectDiscription:after,
+#lingGitHub:after,
+#linkGHP:after {
    
     width:45px;
     border-top: 2px solid red;
@@ -279,15 +307,22 @@ body {
 	 top: 25px;
 }
 .projectDiscription:after {
-	 top: 125px;
+	 top: 110px;
 }
-
+#lingGitHub:after {
+	top: 165px;
+}
+#linkGHP:after {
+	right: 130px;
+	top: 165px;
+}
 .projectTitle {
 	text-align: right;
 	padding-bottom: 20px;
 	// border-bottom: 
 }
 .projectDiscription {
+	padding-bottom: 40px;
 	float: right;
 	width:80%;
 	text-align: right;
@@ -295,6 +330,16 @@ body {
 .projectName {
 	color:white;
 }
+.linkWork {
+	// display: none;
+}
+#lingGitHub,
+#linkGHP {
+	float: right;
+	padding-left: 10px;
+}
+
+/*центральная навигация*/
 .workNav {
 	width: 10%;
 	// clear: both;
@@ -336,14 +381,17 @@ body {
 	}
 
 }
+/*центральная навигация*/
 
+/*правая сторона*/
 .rightSide {
 
 	overflow: hidden;
 	float: right;
 	// right: 100%;
 	width: 50%;
-	height: 100%;
+	height: 100vh;
+	background: white;
 	// line-height: 100%;
 	// border: 1px solid black;
 	// background-image: url();
@@ -354,6 +402,7 @@ body {
 		size:cover;
 	}
 }
+/*правая сторона*/
 /*контактная информация*/
 .contactInfo {
 	position: absolute;
@@ -439,24 +488,24 @@ body {
 	transform: translateY(0%) scale(1);
 }
 /*всплывающие подсказки*/
+
+/*картинки проектов*/
 .projectsImg {
 	
 		background-size: cover;
 		background-repeat: no-repeat;
 		height: 100vh;
 		background-position: center;
-		
-
 }
 #projectsImg1 {
 	// width: 50%;
 	background-image: url(../img/buildhome.png);
 }
 #projectsImg2 {
-	background-image: url(../img/comingsoon.jpg);
+	background-image: url(../img/ural.png);
 }
 #projectsImg3 {
-	background-image: url(../img/comingsoon.jpg);
+	background-image: url(../img/pingbuller.png);
 }
 #projectsImg4 {
 	background-image: url(../img/comingsoon.jpg);

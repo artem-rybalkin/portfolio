@@ -74,6 +74,7 @@ body {
   height: 100%;
   overflow: hidden; }
 
+/*первая страница*/
 #firstPage {
   opacity: 1;
   background: #008B8B;
@@ -104,6 +105,8 @@ body {
   width: 100%;
   top: 40%; }
 
+/*первая страница*/
+/*вторая страница*/
 .secondPage {
   display: none;
   height: 100%; }
@@ -126,11 +129,9 @@ body {
     width: 100%; }
   .cv .cv-name {
     margin-top: 10px;
-    padding-top: 10px;
-    float: right; }
+    padding-top: 10px; }
   .cv .softskils {
     width: 66%;
-    float: right;
     padding-left: 20px;
     padding-top: 20px; }
   .cv .cv-about_me {
@@ -151,10 +152,14 @@ body {
     padding-top: 20px; }
   .cv .cv-skills {
     padding-top: 20px; }
+  .cv .card-first {
+    margin-left: 30px; }
   .cv .card {
+    font-size: 10px;
     float: left;
-    margin: 10px;
-    width: 175px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 28%;
     height: 85px;
     background: #607D8B;
     border-radius: 8px; }
@@ -169,7 +174,7 @@ body {
     .cv .card .company_course-name,
     .cv .card .course-name {
       text-align: center;
-      padding-bottom: 5px; }
+      padding: 5px; }
 
 /*тех скилы анимация*/
 .skillbar {
@@ -243,22 +248,17 @@ body {
   color: rgba(0, 0, 0, 0.4); }
 
 /*тех скилы анимация*/
+/*skype mail location*/
+.contact {
+  clear: both;
+  padding-top: 20px; }
+  .contact div {
+    width: 32%;
+    text-align: center;
+    float: left; }
+
+/*skype mail location*/
 /*кнопка закрыть*/
-.closeButton {
-  display: none;
-  width: 25px;
-  height: 25px;
-  line-height: 22px;
-  background: #F44336;
-  border: 1px solid #616161;
-  border-radius: 12px;
-  float: right;
-  text-align: center; }
-
-.closeButton:hover {
-  cursor: pointer;
-  background: #D32F2F; }
-
 /*кнопка закрыть*/
 .projects {
   float: left;
@@ -270,12 +270,18 @@ body {
 .projectTitle:after,
 .projectTitle:before,
 .projectDiscription:after,
-.projectDiscription:before {
+.projectDiscription:before,
+#lingGitHub:after,
+#linkGHP:after,
+#lingGitHub:before,
+#linkGHP:before {
   position: absolute;
   content: ''; }
 
 .projectTitle:after,
-.projectDiscription:after {
+.projectDiscription:after,
+#lingGitHub:after,
+#linkGHP:after {
   width: 45px;
   border-top: 2px solid red;
   right: 0px; }
@@ -284,13 +290,21 @@ body {
   top: 25px; }
 
 .projectDiscription:after {
-  top: 125px; }
+  top: 110px; }
+
+#lingGitHub:after {
+  top: 165px; }
+
+#linkGHP:after {
+  right: 130px;
+  top: 165px; }
 
 .projectTitle {
   text-align: right;
   padding-bottom: 20px; }
 
 .projectDiscription {
+  padding-bottom: 40px;
   float: right;
   width: 80%;
   text-align: right; }
@@ -298,6 +312,12 @@ body {
 .projectName {
   color: white; }
 
+#lingGitHub,
+#linkGHP {
+  float: right;
+  padding-left: 10px; }
+
+/*центральная навигация*/
 .workNav {
   width: 10%;
   float: right; }
@@ -323,17 +343,21 @@ body {
   .workNav .workNav__item:hover .workNav__div {
     opacity: 1; }
 
+/*центральная навигация*/
+/*правая сторона*/
 .rightSide {
   overflow: hidden;
   float: right;
   width: 50%;
-  height: 100%; }
+  height: 100vh;
+  background: white; }
   .rightSide img {
     position: absolute;
     top: 0;
     height: 100vh;
     size: cover; }
 
+/*правая сторона*/
 /*контактная информация*/
 .contactInfo {
   position: absolute;
@@ -400,6 +424,7 @@ body {
   transform: translateY(0%) scale(1); }
 
 /*всплывающие подсказки*/
+/*картинки проектов*/
 .projectsImg {
   background-size: cover;
   background-repeat: no-repeat;
@@ -410,10 +435,10 @@ body {
   background-image: url(../img/buildhome.png); }
 
 #projectsImg2 {
-  background-image: url(../img/comingsoon.jpg); }
+  background-image: url(../img/ural.png); }
 
 #projectsImg3 {
-  background-image: url(../img/comingsoon.jpg); }
+  background-image: url(../img/pingbuller.png); }
 
 #projectsImg4 {
   background-image: url(../img/comingsoon.jpg);

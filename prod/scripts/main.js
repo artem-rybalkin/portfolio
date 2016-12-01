@@ -96,8 +96,8 @@ $(function(){
 	// плавная прокрутка страницы // 
 	/* открытие страницы обо мне*/
 	$('.aboutMe').click(function(){
-		$('.projects').css('display', 'none');
-		$('.cv').css('display','block');
+		$('.projects').fadeOut();
+		$('.cv').fadeIn();
 		// $('.skillbar').each($(this).css('width',0));
 		$('.skillbar').each(function(){
 			$(this).find('.skillbar-bar').animate({
@@ -110,12 +110,24 @@ $(function(){
 	/*открытие страницы обо мне*/
 	/*закрытие обомне*/
 	$('.projectInfo').click(function(){
-		$('.projects').css('display', 'block');
-		$('.cv').css('display','none');
+		$('.projects').fadeIn();
+		$('.cv').fadeOut();
 	});
 	/*закрытие обомне*/
+	/*animation*/
+	$("#lingGitHub").mouseover( function(){ // при наведении курсора
+		$( this ).animate({opacity: 0.65},100); //меняется прозрачность
+	}).mouseout( function(){
+		$( this ).animate({opacity: 1},100);
+	});
+	$("#linkGHP").mouseover( function(){ // при наведении курсора
+		$( this ).animate({opacity: 0.65},100); //меняется прозрачность
+	}).mouseout( function(){
+		$( this ).animate({opacity: 1},100);
+	});
+	/*animation*/
 	// преключение табов
-	$( "#projectsImg1" ).show ();
+	$( "#projectsImg1" ).hide ();
   	$( "#projectsImg2" ).hide ();
   	$( "#projectsImg3" ).hide ();
   	$( "#projectsImg4" ).hide ();
@@ -125,93 +137,59 @@ $(function(){
   	$( "#projectsImg8" ).hide ();
   	$( "#projectsImg9" ).hide ();
   	$( "#projectsImg10" ).hide ();
+  	$('.linkWork').hide();
+  	$('.workNav__div a').click(function(){ /*отображаем ссылки при нажатии налюбую кнопку навигации*/
+  		$('.linkWork').fadeIn(1000);
+  	});
   	$( "#image1" ).click(function(){
-  		$( "#projectsImg1" ).show (500);
-  		$("#projectTitle-1").text('lorem ipsum');
-	  	$( "#projectsImg2" ).hide ();
-	  	$( "#projectsImg3" ).hide ();
-	  	$( "#projectsImg4" ).hide ();
-	  	$( "#projectsImg5" ).hide ();
-	  	$( "#projectsImg6" ).hide ();
-	  	$( "#projectsImg7" ).hide ();
-	  	$( "#projectsImg8" ).hide ();
-	  	$( "#projectsImg9" ).hide ();
-	  	$( "#projectsImg10" ).hide ();
+  		$('.projectsImg').each(function(){
+  			$(this).fadeOut();
+  		});
+  		$( "#projectsImg1" ).fadeIn(2000);
+  		$("#lingGitHub").attr('href','https://github.com/artem-rybalkin/BuildHome');
+  		$('#linkGHP').attr('href','https://artem-rybalkin.github.io/BuildHome/');
    	});
    	$( "#image2" ).click(function(){
-  		$( "#projectsImg1" ).hide ();
-	  	$( "#projectsImg2" ).show (500);
-	  	$("#projectTitle-1").text('lorem ipsum2');
-	  	$( "#projectsImg3" ).hide ();
-	  	$( "#projectsImg4" ).hide ();
-	  	$( "#projectsImg5" ).hide ();
-	  	$( "#projectsImg6" ).hide ();
-	  	$( "#projectsImg7" ).hide ();
-	  	$( "#projectsImg8" ).hide ();
-	  	$( "#projectsImg9" ).hide ();
-	  	$( "#projectsImg10" ).hide ();
+   		$('.projectsImg').each(function(){
+  			$(this).fadeOut();
+  		});
+  		$( "#projectsImg2" ).fadeIn(2000);
+  		$("#lingGitHub").attr('href','https://github.com/artem-rybalkin/URLAUBSGLUCK');
+  		$('#linkGHP').attr('href','https://artem-rybalkin.github.io/URLAUBSGLUCK/');
    	});
    	$( "#image3" ).click(function(){
-  		$( "#projectsImg1" ).hide ();
-	  	$( "#projectsImg2" ).hide ();
-	  	$( "#projectsImg3" ).show ();
-	  	$( "#projectsImg4" ).hide ();
-	  	$( "#projectsImg5" ).hide ();
-	  	$( "#projectsImg6" ).hide ();
-	  	$( "#projectsImg7" ).hide ();
-	  	$( "#projectsImg8" ).hide ();
-	  	$( "#projectsImg9" ).hide ();
-	  	$( "#projectsImg10" ).hide ();
+  		$('.projectsImg').each(function(){
+  			$(this).fadeOut();
+  		});
+  		$( "#projectsImg3" ).fadeIn(2000);
+  		$("#lingGitHub").attr('href','https://github.com/artem-rybalkin/PINGBULLER');
+  		$('#linkGHP').attr('href','https://artem-rybalkin.github.io/PINGBULLER/');
    	});
-   	 	$( "#image4" ).click(function(){
-  		$( "#projectsImg1" ).hide ();
-	  	$( "#projectsImg2" ).hide ();
-	  	$( "#projectsImg3" ).hide ();
-	  	$( "#projectsImg4" ).show ();
-	  	$( "#projectsImg5" ).hide ();
-	  	$( "#projectsImg6" ).hide ();
-	  	$( "#projectsImg7" ).hide ();
-	  	$( "#projectsImg8" ).hide ();
-	  	$( "#projectsImg9" ).hide ();
-	  	$( "#projectsImg10" ).hide ();
+   	 $( "#image4" ).click(function(){
+  		$('.projectsImg').each(function(){
+  			$(this).fadeOut();
+  		});
+  		$( "#projectsImg4" ).fadeIn(2000)
    	});
-   	 	$( "#image5" ).click(function(){
-  		$( "#projectsImg1" ).hide ();
-	  	$( "#projectsImg2" ).hide ();
-	  	$( "#projectsImg3" ).hide ();
-	  	$( "#projectsImg4" ).hide ();
-	  	$( "#projectsImg5" ).show ();
-	  	$( "#projectsImg6" ).hide ();
-	  	$( "#projectsImg7" ).hide ();
-	  	$( "#projectsImg8" ).hide ();
-	  	$( "#projectsImg9" ).hide ();
-	  	$( "#projectsImg10" ).hide ();
+   	 $( "#image5" ).click(function(){
+  		$('.projectsImg').each(function(){
+  			$(this).fadeOut();
+  		});
+  		$( "#projectsImg5" ).fadeIn(2000)
    	});
-   	 	$( "#image6" ).click(function(){
-  		$( "#projectsImg1" ).hide ();
-	  	$( "#projectsImg2" ).hide ();
-	  	$( "#projectsImg3" ).hide ();
-	  	$( "#projectsImg4" ).hide ();
-	  	$( "#projectsImg5" ).hide ();
-	  	$( "#projectsImg6" ).show ();
-	  	$( "#projectsImg7" ).hide ();
-	  	$( "#projectsImg8" ).hide ();
-	  	$( "#projectsImg9" ).hide ();
-	  	$( "#projectsImg10" ).hide ();
+   	 $( "#image6" ).click(function(){
+  		$('.projectsImg').each(function(){
+  			$(this).fadeOut();
+  		});
+  		$( "#projectsImg6" ).fadeIn(2000)
    	});
-   	 	$( "#image7" ).click(function(){
-  		$( "#projectsImg1" ).hide ();
-	  	$( "#projectsImg2" ).hide ();
-	  	$( "#projectsImg3" ).hide ();
-	  	$( "#projectsImg4" ).hide ();
-	  	$( "#projectsImg5" ).hide ();
-	  	$( "#projectsImg6" ).hide ();
-	  	$( "#projectsImg7" ).show ();
-	  	$( "#projectsImg8" ).hide ();
-	  	$( "#projectsImg9" ).hide ();
-	  	$( "#projectsImg10" ).hide ();
+   	 $( "#image7" ).click(function(){
+  		$('.projectsImg').each(function(){
+  			$(this).fadeOut();
+  		});
+  		$( "#projectsImg7" ).fadeIn(2000)
    	});
-   	 	$( "#image8" ).click(function(){
+   	 $( "#image8" ).click(function(){
   		$( "#projectsImg1" ).hide ();
 	  	$( "#projectsImg2" ).hide ();
 	  	$( "#projectsImg3" ).hide ();
