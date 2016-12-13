@@ -111,12 +111,14 @@ body {
   display: none;
   height: 100%; }
 
+/*левая сторона*/
 .leftSide {
   background: #2b2827;
   float: left;
   width: 50%;
   height: 100vh; }
 
+/*резюме*/
 .cv {
   text-align: center;
   display: none;
@@ -176,6 +178,7 @@ body {
       text-align: center;
       padding: 5px; }
 
+/*резюме*/
 /*тех скилы анимация*/
 .skillbar {
   float: left;
@@ -260,6 +263,7 @@ body {
 /*skype mail location*/
 /*кнопка закрыть*/
 /*кнопка закрыть*/
+/*центральная часть*/
 .projects {
   float: left;
   margin: 0 auto;
@@ -267,6 +271,7 @@ body {
   top: 30%;
   position: relative; }
 
+/*нижня черточка*/
 .projectTitle:after,
 .projectTitle:before,
 .projectDiscription:after,
@@ -290,15 +295,17 @@ body {
   top: 25px; }
 
 .projectDiscription:after {
-  top: 110px; }
+  top: 130px; }
 
 #lingGitHub:after {
-  top: 165px; }
+  top: 185px; }
 
 #linkGHP:after {
   right: 130px;
-  top: 165px; }
+  top: 185px; }
 
+/*нижня черточка*/
+/*текст по середине странице*/
 .projectTitle {
   text-align: right;
   padding-bottom: 20px; }
@@ -306,7 +313,7 @@ body {
 .projectDiscription {
   padding-bottom: 40px;
   float: right;
-  width: 80%;
+  width: 90%;
   text-align: right; }
 
 .projectName {
@@ -317,6 +324,7 @@ body {
   float: right;
   padding-left: 10px; }
 
+/*текст по середине странице*/
 /*центральная навигация*/
 .workNav {
   width: 10%;
@@ -325,10 +333,7 @@ body {
     height: 10vh;
     line-height: 10vh;
     text-align: center; }
-    .workNav .workNav__item a {
-      display: block; }
   .workNav .workNav__div {
-    opacity: 0;
     float: left;
     text-align: center;
     width: 90%; }
@@ -340,24 +345,15 @@ body {
     transition: 1s; }
   .workNav .workNav__item:hover .workNav__border {
     height: 90%; }
-  .workNav .workNav__item:hover .workNav__div {
+  .workNav .workNav__item:hover a {
+    opacity: 1; }
+  .workNav a {
+    opacity: 0;
+    display: block; }
+  .workNav .active {
     opacity: 1; }
 
 /*центральная навигация*/
-/*правая сторона*/
-.rightSide {
-  overflow: hidden;
-  float: right;
-  width: 50%;
-  height: 100vh;
-  background: white; }
-  .rightSide img {
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    size: cover; }
-
-/*правая сторона*/
 /*контактная информация*/
 .contactInfo {
   position: absolute;
@@ -383,6 +379,20 @@ body {
     line-height: 20px; }
 
 /* контактная информация */
+/*левая сторона*/
+/*правая сторона*/
+.rightSide {
+  overflow: hidden;
+  float: right;
+  width: 50%;
+  height: 100vh;
+  background: white; }
+  .rightSide img {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    size: cover; }
+
 /*всплывающие подсказки*/
 .rightSide {
   position: relative; }
@@ -441,8 +451,7 @@ body {
   background-image: url(../img/pingbuller.png); }
 
 #projectsImg4 {
-  background-image: url(../img/comingsoon.jpg);
-  background-size: contain; }
+  background-image: url(../img/appletea.png); }
 
 #projectsImg5 {
   background-image: url(../img/comingsoon.jpg); }
@@ -451,8 +460,7 @@ body {
   background-image: url(../img/comingsoon.jpg); }
 
 #projectsImg7 {
-  background-image: url(../img/comingsoon.jpg);
-  background-size: contain; }
+  background-image: url(../img/comingsoon.jpg); }
 
 #projectsImg8 {
   background-image: url(../img/comingsoon.jpg); }
@@ -461,23 +469,8 @@ body {
   background-image: url(../img/comingsoon.jpg); }
 
 #projectsImg10 {
-  background-image: url(../img/comingsoon.jpg);
-  background-size: contain; }
+  background-image: url(../img/comingsoon.jpg); }
 
-progress::-webkit-progress-bar {
-  background-color: #f3f3f3;
-  border: 0;
-  height: 4px;
-  border-radius: 9px; }
-
-progress::-webkit-progress-value {
-  background-color: #000;
-  border: 0;
-  height: 4px;
-  border-radius: 9px; }
-
-progress::-moz-progress-bar {
-  background-color: #f3f3f3;
-  border: 0;
-  height: 4px;
-  border-radius: 9px; }
+/*картинки проектов*/
+/*правая сторона*/
+/*вторая страница*/
