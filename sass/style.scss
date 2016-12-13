@@ -104,14 +104,15 @@ body {
 	.foto {
 		margin-top: 10px;
 		float: right;
-		width: 180px;
-	    height: 180px;
+		// width: 180px;
+	 //    height: 180px;
 	    overflow: hidden;
-	    border-radius: 105px;
+	    border-radius: 11px;
 	    img {
 	    	position: relative;
-		    right: 276px;
-		    bottom: 45px;
+		    // right: 276px;
+		    // bottom: 45px;
+		    width: 100px;
 	    }
 	}
 	.cv-education {
