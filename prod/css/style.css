@@ -73,6 +73,10 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden; }
+  @media (max-width: 979px) {
+    .wrapper {
+      width: auto;
+      height: auto; } }
 
 /*первая страница*/
 #firstPage {
@@ -117,7 +121,22 @@ body {
   float: left;
   width: 50%;
   height: 100vh; }
+  @media (max-width: 979px) {
+    .leftSide {
+      width: auto;
+      height: auto; } }
 
+/*hello-screen*/
+.helloScreen {
+  display: none;
+  height: 100vh;
+  background: #008B8B;
+  text-align: center; }
+  @media (max-width: 979px) {
+    .helloScreen {
+      display: block; } }
+
+/*hello-screen*/
 /*резюме*/
 .cv {
   text-align: center;
@@ -125,6 +144,11 @@ body {
   height: 90%;
   width: 90%;
   float: left; }
+  @media (max-width: 979px) {
+    .cv {
+      display: block;
+      float: none;
+      margin: 10px auto; } }
   .cv .cv-about_me,
   .cv .cv-skills,
   .cv .cv-education {
@@ -135,22 +159,41 @@ body {
   .cv .softskils {
     width: 66%;
     padding-left: 20px;
-    padding-top: 20px; }
+    padding-top: 20px;
+    line-height: 1.5; }
   .cv .cv-about_me {
     height: 200px; }
   .cv .foto {
+    margin-right: 0px;
     margin-top: 10px;
     float: right;
-    overflow: hidden;
-    border-radius: 11px; }
+    overflow: hidden; }
+    @media (max-width: 979px) {
+      .cv .foto {
+        margin-right: 45px; } }
     .cv .foto img {
+      -moz-transform: rotate(90deg);
+      /* Для Firefox */
+      -ms-transform: rotate(90deg);
+      /* Для IE */
+      -webkit-transform: rotate(90deg);
+      /* Для Safari, Chrome, iOS */
+      -o-transform: rotate(90deg);
+      /* Для Opera */
+      transform: rotate(90deg);
       position: relative;
-      width: 100px; }
+      width: 200px; }
   .cv .cv-education {
     clear: both;
     padding-top: 20px; }
   .cv .cv-skills {
     padding-top: 20px; }
+    @media (max-width: 979px) {
+      .cv .cv-skills {
+        padding-top: 0; } }
+    @media (max-width: 979px) {
+      .cv .cv-skills h3 {
+        padding-bottom: 20px; } }
   .cv .card-first {
     margin-left: 30px; }
   .cv .card {
@@ -255,7 +298,8 @@ body {
   .contact div {
     width: 32%;
     text-align: center;
-    float: left; }
+    float: left;
+    margin-bottom: 20px; }
 
 /*skype mail location*/
 /*кнопка закрыть*/
@@ -267,6 +311,11 @@ body {
   width: 90%;
   top: 30%;
   position: relative; }
+  @media (max-width: 979px) {
+    .projects {
+      height: 70vh;
+      float: none;
+      margin: 50px auto auto; } }
 
 /*нижня черточка*/
 .projectTitle:after,
@@ -292,14 +341,14 @@ body {
   top: 25px; }
 
 .projectDiscription:after {
-  top: 130px; }
+  top: 70%; }
 
 #lingGitHub:after {
-  top: 185px; }
+  top: 85%; }
 
 #linkGHP:after {
   right: 130px;
-  top: 185px; }
+  top: 85%; }
 
 /*нижня черточка*/
 /*текст по середине странице*/
@@ -316,6 +365,10 @@ body {
 .projectName {
   color: white; }
 
+@media (max-width: 979px) {
+  .linkWork {
+    display: none; } }
+
 #lingGitHub,
 #linkGHP {
   float: right;
@@ -326,6 +379,9 @@ body {
 .workNav {
   width: 10%;
   float: right; }
+  @media (max-width: 979px) {
+    .workNav {
+      display: none; } }
   .workNav .workNav__item {
     height: 10vh;
     line-height: 10vh;
@@ -356,6 +412,9 @@ body {
   position: absolute;
   top: 90%;
   left: 7%; }
+  @media (max-width: 979px) {
+    .contactInfo {
+      display: none; } }
   .contactInfo div {
     margin-left: 20px;
     text-align: center;
@@ -384,11 +443,10 @@ body {
   width: 50%;
   height: 100vh;
   background: white; }
-  .rightSide img {
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    size: cover; }
+  @media (max-width: 979px) {
+    .rightSide {
+      width: 100%;
+      height: auto; } }
 
 /*всплывающие подсказки*/
 .rightSide {
@@ -402,6 +460,10 @@ body {
   height: 50%;
   transition: transform .4s ease-out;
   color: #fff; }
+  @media (max-width: 979px) {
+    .projectsImg::after,
+    .projectsImg::before {
+      display: none; } }
 
 .projectsImg::after {
   content: attr(data-title);
@@ -430,13 +492,66 @@ body {
 .projectsImg:hover::before {
   transform: translateY(0%) scale(1); }
 
+@media (max-width: 979px) {
+  .projectsImg:hover .projectsImg-hover {
+    display: block; } }
+
+.projectsImg-hover a:hover {
+  color: rebeccapurple; }
+  .projectsImg-hover a:hover ::after {
+    display: block; }
+
+.projectsImg-hover a::after {
+  display: none;
+  content: attr(data-tooltip); }
+
+.projectsImg-hover a:hover::after {
+  position: absolute;
+  display: block;
+  transition: 0.4s ease-in-out;
+  margin-top: -50px;
+  font-size: 14px;
+  color: #000; }
+
+.page:hover::after {
+  margin-left: 50px; }
+
+.projectsImg-hover {
+  display: none;
+  color: black;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.37); }
+  .projectsImg-hover a {
+    color: black;
+    padding: 10px; }
+  .projectsImg-hover h3 {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px; }
+
 /*всплывающие подсказки*/
 /*картинки проектов*/
-.projectsImg {
+.comingSoon {
+  display: none; }
+
+.rightSide .projectsImg {
+  display: none;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
   background-position: center; }
+  @media (max-width: 979px) {
+    .rightSide .projectsImg {
+      display: block;
+      width: 29%;
+      float: left;
+      margin: 10px;
+      height: 150px;
+      background-position: center; } }
+
+.projectsImgWrapper {
+  margin: 0 auto; }
 
 #projectsImg1 {
   background-image: url(../img/buildhome.png); }
@@ -451,7 +566,7 @@ body {
   background-image: url(../img/appletea.png); }
 
 #projectsImg5 {
-  background-image: url(../img/comingsoon.jpg); }
+  background-image: url(../img/bootstrap_index.png); }
 
 #projectsImg6 {
   background-image: url(../img/comingsoon.jpg); }

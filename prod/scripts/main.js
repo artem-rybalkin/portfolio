@@ -68,6 +68,11 @@ $(function(){
 	// плавная прокрутка страницы // 
 
 	/* открытие страницы обо мне*/
+    $('.skillbar').each(function(){
+      $(this).find('.skillbar-bar').animate({
+        width:$(this).attr('data-percent')
+      },3000);
+    });
 	$('.aboutMe').click(function(){
 		$('.projects').fadeOut();
 		$('.cv').fadeIn();
@@ -101,17 +106,17 @@ $(function(){
 	/*animation*/
 
 	// преключение табов
-	$( "#projectsImg1" ).hide ();
-  	$( "#projectsImg2" ).hide ();
-  	$( "#projectsImg3" ).hide ();
-  	$( "#projectsImg4" ).hide ();
-  	$( "#projectsImg5" ).hide ();
-  	$( "#projectsImg6" ).hide ();
-  	$( "#projectsImg7" ).hide ();
-  	$( "#projectsImg8" ).hide ();
-  	$( "#projectsImg9" ).hide ();
-  	$( "#projectsImg10" ).hide ();
-  	$('.linkWork').hide();
+	// $( "#projectsImg1" ).hide ();
+ //  	$( "#projectsImg2" ).hide ();
+ //  	$( "#projectsImg3" ).hide ();
+ //  	$( "#projectsImg4" ).hide ();
+ //  	$( "#projectsImg5" ).hide ();
+ //  	$( "#projectsImg6" ).hide ();
+ //  	$( "#projectsImg7" ).hide ();
+ //  	$( "#projectsImg8" ).hide ();
+ //  	$( "#projectsImg9" ).hide ();
+ //  	$( "#projectsImg10" ).hide ();
+ //  	$('.linkWork').hide();
 /*отображаем ссылки при нажатии налюбую кнопку навигации*/
   	$('.workNav__div a').click(function(){ 
   		$('.linkWork').fadeIn(1000);
@@ -168,7 +173,9 @@ $(function(){
   		$('.projectsImg').each(function(){
   			$(this).fadeOut();
   		});
-  		$( "#projectsImg5" ).fadeIn(2000)
+  		$( "#projectsImg5" ).fadeIn(2000);
+      $("#lingGitHub").attr('href','https://github.com/artem-rybalkin/templatebootstrap');
+      $('#linkGHP').attr('href','https://artem-rybalkin.github.io/templatebootstrap/');
    	});
 /*выбираем 6-ую работу*/
    	$( "#image6" ).click(function(){

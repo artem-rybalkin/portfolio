@@ -30,6 +30,10 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    @media (max-width: 979px) {
+		width: auto;
+		height: auto;
+	}
 }
 
 /*первая страница*/
@@ -72,13 +76,33 @@ body {
 }
 	/*левая сторона*/
 .leftSide {
+	@media (max-width: 979px) {
+		width: auto;
+		height: auto;
+	}
 	background: #2b2827;
 	float: left;
 	width: 50%;
 	height: 100vh;
 }
+		/*hello-screen*/
+.helloScreen {
+	display: none;
+	height:100vh;
+	background: #008B8B;
+	text-align: center; 
+	@media (max-width: 979px) {
+		display: block;
+	}
+}
+		/*hello-screen*/
 		/*резюме*/
 .cv {
+	@media (max-width:979px) {
+		display: block;
+		float: none;
+		margin: 10px auto;
+	}
 	text-align: center;
 	display: none;
 	height: 90%;
@@ -97,22 +121,33 @@ body {
 		width: 66%;
 	    padding-left: 20px;
 	    padding-top: 20px;
+	    line-height: 1.5;
+
 	}
 	.cv-about_me {
 		height: 200px;
 	}
 	.foto {
+		@media (max-width: 979px) {
+			margin-right: 45px;
+		}
+		margin-right: 0px;
 		margin-top: 10px;
 		float: right;
 		// width: 180px;
 	 //    height: 180px;
 	    overflow: hidden;
-	    border-radius: 11px;
+	    // border-radius: 11px;
 	    img {
+	    	-moz-transform: rotate(90deg); /* Для Firefox */
+		    -ms-transform: rotate(90deg); /* Для IE */
+		    -webkit-transform: rotate(90deg); /* Для Safari, Chrome, iOS */
+		    -o-transform: rotate(90deg); /* Для Opera */
+		    transform: rotate(90deg);
 	    	position: relative;
 		    // right: 276px;
 		    // bottom: 45px;
-		    width: 100px;
+		    width: 200px;
 	    }
 	}
 	.cv-education {
@@ -121,6 +156,14 @@ body {
 	}
 	.cv-skills {
 		padding-top:20px;
+		@media (max-width: 979px) {
+	    	padding-top: 0;
+	    }
+	    h3 {
+	    	@media (max-width: 979px) {
+	    		padding-bottom: 20px;
+	    	}
+	    }
 	}
 	.card-first {
 		margin-left: 30px;
@@ -236,6 +279,7 @@ body {
 		width:32%;
 		text-align: center;
 		float: left;
+		margin-bottom: 20px;
 	}
 }
 		/*skype mail location*/
@@ -262,6 +306,12 @@ body {
 
 		/*центральная часть*/
 .projects {
+	@media (max-width: 979px) {
+		height: 70vh;
+		float: none;
+		margin: 50px auto auto;
+
+	}
 	float: left;
 	margin: 0 auto;
 	width: 90%;
@@ -293,14 +343,17 @@ body {
 	top: 25px;
 }
 .projectDiscription:after {
-	top: 130px;
+	top: 70%;
+	@media (max-width: 979px) {
+		// top: 48%;
+	}
 }
 #lingGitHub:after {
-	top: 185px;
+	top: 85%;
 }
 #linkGHP:after {
 	right: 130px;
-	top: 185px;
+	top: 85%;
 }
 		/*нижня черточка*/
 		/*текст по середине странице*/
@@ -318,7 +371,9 @@ body {
 	color:white;
 }
 .linkWork {
-
+	@media (max-width: 979px) {
+		display: none;
+	}
 }
 #lingGitHub,
 #linkGHP {
@@ -328,6 +383,9 @@ body {
 		/*текст по середине странице*/
 		/*центральная навигация*/
 .workNav {
+	@media (max-width: 979px) {
+		display: none;
+	}
 	width: 10%;
 	float: right;
 	.workNav__item {
@@ -365,6 +423,9 @@ body {
 		/*центральная навигация*/
 		/*контактная информация*/
 .contactInfo {
+	@media (max-width: 979px) {
+		display: none;
+	}
 	position: absolute;
 	top: 90%;
 	left: 7%;
@@ -396,17 +457,15 @@ body {
 
 	/*правая сторона*/
 .rightSide {
+	@media (max-width: 979px) {
+		width: 100%;
+		height: auto;
+	}
 	overflow: hidden;
 	float: right;
 	width: 50%;
 	height: 100vh;
 	background: white;
-	img {
-		position: absolute;
-		top: 0;
-		height: 100vh;
-		size:cover;
-	}
 }
 		/*всплывающие подсказки*/
 .rightSide {
@@ -414,6 +473,9 @@ body {
 }
 .projectsImg::after,
 .projectsImg::before {
+	@media (max-width: 979px) {
+		display: none;
+	}
 	position: absolute;
 	z-index: 1;
 	width: 100%;
@@ -448,14 +510,75 @@ body {
 .projectsImg:hover::before {
 	transform: translateY(0%) scale(1);
 }
+
+.projectsImg:hover .projectsImg-hover {
+	@media (max-width: 979px) {
+	display: block;
+		
+	}
+}
+.projectsImg-hover a:hover {
+	color: rebeccapurple;
+	::after {
+		display: block;
+	}
+}
+.projectsImg-hover a::after {
+	display: none;
+	content: attr(data-tooltip);
+}
+.projectsImg-hover a:hover::after {
+	position: absolute;
+	display: block;
+	transition: 0.4s ease-in-out;
+	// float: right;
+    // padding-right: 27px;
+    margin-top: -50px;
+    font-size: 14px;
+    color: #000;
+}
+.page:hover::after {
+	margin-left: 50px;
+}
+.projectsImg-hover {
+	display: none;
+	color: black;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,.37);
+	a {
+		color: black;
+		padding:10px;
+	}
+	h3 {
+		text-align: center;
+    	padding-top: 40px;
+    	padding-bottom: 40px;
+	}
+}
 		/*всплывающие подсказки*/
 
 		/*картинки проектов*/
-.projectsImg {
+.comingSoon {
+	display: none;
+}
+.rightSide .projectsImg {
+	@media (max-width: 979px) {
+		display: block;
+		width: 29%;
+		float: left;
+		margin: 10px;
+		height: 150px;
+		background-position: center;
+	}
+		display: none;
 		background-size: cover;
 		background-repeat: no-repeat;
 		height: 100vh;
 		background-position: center;
+}
+.projectsImgWrapper {
+	margin: 0 auto;
 }
 #projectsImg1 {
 	background-image: url(../img/buildhome.png);
@@ -470,7 +593,7 @@ body {
 	background-image: url(../img/appletea.png);
 }
 #projectsImg5 {
-	background-image: url(../img/comingsoon.jpg);
+	background-image: url(../img/bootstrap_index.png);
 }
 #projectsImg6 {
 	background-image: url(../img/comingsoon.jpg);
