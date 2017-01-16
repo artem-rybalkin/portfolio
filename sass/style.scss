@@ -114,10 +114,16 @@ body {
 		width: 100%;
 	}
 	.cv-name {
+		@media (max-width: 500px) {
+			margin-bottom: 40px;
+		}
 		margin-top: 10px;
     	padding-top: 10px;
 	}
 	.softskils {
+		@media (max-width: 500px) {
+			display: none;
+		}
 		width: 66%;
 	    padding-left: 20px;
 	    padding-top: 20px;
@@ -128,8 +134,12 @@ body {
 		height: 200px;
 	}
 	.foto {
+		@media (max-width: 500px) {
+			float: none;
+		}
 		@media (max-width: 979px) {
-			margin-right: 45px;
+			// margin-right: 45px;
+			overflow: inherit;
 		}
 		margin-right: 0px;
 		margin-top: 10px;
@@ -148,6 +158,7 @@ body {
 		    // right: 276px;
 		    // bottom: 45px;
 		    width: 200px;
+		    border-radius: 75px;
 	    }
 	}
 	.cv-education {
@@ -156,7 +167,13 @@ body {
 	}
 	.cv-skills {
 		padding-top:20px;
-		@media (max-width: 979px) {
+		@media (max-width: 400px) {
+			margin-top: 82px;
+		}
+		@media (min-width: 401px) and (max-width: 500px) {
+			padding-top: 62px;
+		}
+		@media (min-width:501) and (max-width: 979px) {
 	    	padding-top: 0;
 	    }
 	    h3 {
@@ -167,6 +184,9 @@ body {
 	}
 	.card-first {
 		margin-left: 30px;
+		@media (max-width: 450px) {
+			margin-left: 12px;
+		}
 	}
 	.card {
 		font-size: 10px;
@@ -190,12 +210,19 @@ body {
 		.course-name {
 			text-align: center;
 			padding: 5px;
+			@media (max-width: 450px) {
+				padding: 0;
+			}
 		}
 	}
 }
 		/*резюме*/
 		/*тех скилы анимация*/
 .skillbar {
+	@media (max-width: 450px) {
+		float: none;
+		width: 90%;
+	}
 	float: left;
     margin-left: 20px;
 	position:relative;
@@ -275,7 +302,17 @@ body {
 .contact {
 	clear: both;
 	padding-top: 20px;
+	.skype,
+	.location {
+		width: 22%;
+	}
+	.email {
+		width:50%;
+	}
 	div {
+		@media (max-width: 450px) {
+			font-size: 11px;
+		}
 		width:32%;
 		text-align: center;
 		float: left;
@@ -344,8 +381,8 @@ body {
 }
 .projectDiscription:after {
 	top: 70%;
-	@media (max-width: 979px) {
-		// top: 48%;
+	@media (max-width: 630px) {
+		top: 90%;
 	}
 }
 #lingGitHub:after {

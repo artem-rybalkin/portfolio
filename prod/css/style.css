@@ -156,11 +156,17 @@ body {
   .cv .cv-name {
     margin-top: 10px;
     padding-top: 10px; }
+    @media (max-width: 500px) {
+      .cv .cv-name {
+        margin-bottom: 40px; } }
   .cv .softskils {
     width: 66%;
     padding-left: 20px;
     padding-top: 20px;
     line-height: 1.5; }
+    @media (max-width: 500px) {
+      .cv .softskils {
+        display: none; } }
   .cv .cv-about_me {
     height: 200px; }
   .cv .foto {
@@ -168,9 +174,12 @@ body {
     margin-top: 10px;
     float: right;
     overflow: hidden; }
+    @media (max-width: 500px) {
+      .cv .foto {
+        float: none; } }
     @media (max-width: 979px) {
       .cv .foto {
-        margin-right: 45px; } }
+        overflow: inherit; } }
     .cv .foto img {
       -moz-transform: rotate(90deg);
       /* Для Firefox */
@@ -182,13 +191,20 @@ body {
       /* Для Opera */
       transform: rotate(90deg);
       position: relative;
-      width: 200px; }
+      width: 200px;
+      border-radius: 75px; }
   .cv .cv-education {
     clear: both;
     padding-top: 20px; }
   .cv .cv-skills {
     padding-top: 20px; }
-    @media (max-width: 979px) {
+    @media (max-width: 400px) {
+      .cv .cv-skills {
+        margin-top: 82px; } }
+    @media (min-width: 401px) and (max-width: 500px) {
+      .cv .cv-skills {
+        padding-top: 62px; } }
+    @media (min-width: 501) and (max-width: 979px) {
       .cv .cv-skills {
         padding-top: 0; } }
     @media (max-width: 979px) {
@@ -196,6 +212,9 @@ body {
         padding-bottom: 20px; } }
   .cv .card-first {
     margin-left: 30px; }
+    @media (max-width: 450px) {
+      .cv .card-first {
+        margin-left: 12px; } }
   .cv .card {
     font-size: 10px;
     float: left;
@@ -217,6 +236,10 @@ body {
     .cv .card .course-name {
       text-align: center;
       padding: 5px; }
+      @media (max-width: 450px) {
+        .cv .card .company_course-name,
+        .cv .card .course-name {
+          padding: 0; } }
 
 /*резюме*/
 /*тех скилы анимация*/
@@ -243,6 +266,10 @@ body {
   -ms-transition-property: width, background-color;
   -o-transition-property: width, background-color;
   transition-property: width, background-color; }
+  @media (max-width: 450px) {
+    .skillbar {
+      float: none;
+      width: 90%; } }
 
 .skillbar-title {
   position: absolute;
@@ -295,11 +322,19 @@ body {
 .contact {
   clear: both;
   padding-top: 20px; }
+  .contact .skype,
+  .contact .location {
+    width: 22%; }
+  .contact .email {
+    width: 50%; }
   .contact div {
     width: 32%;
     text-align: center;
     float: left;
     margin-bottom: 20px; }
+    @media (max-width: 450px) {
+      .contact div {
+        font-size: 11px; } }
 
 /*skype mail location*/
 /*кнопка закрыть*/
@@ -342,6 +377,9 @@ body {
 
 .projectDiscription:after {
   top: 70%; }
+  @media (max-width: 630px) {
+    .projectDiscription:after {
+      top: 90%; } }
 
 #lingGitHub:after {
   top: 85%; }
